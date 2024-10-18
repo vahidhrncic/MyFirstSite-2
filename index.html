@@ -3,15 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="description" content="ND Photography - Professionelle Fotografie für unvergessliche Momente.">
-    <meta name="keywords" content="Fotografie, Portraits, Events, ND Photography, Fotograf">
+    <meta name="keywords" content="Fotografie, Porträts, Events, ND Photography, Fotograf, Business-Fotografie, Photoshop-Service">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ND Photography | Ihre Momente - perfekt eingefangen</title>
+
+    <!-- Preconnect für Performance -->
+    <link rel="preconnect" href="https://cdn.tailwindcss.com">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+
     <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Font Awesome für Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="..." crossorigin="anonymous">
+    <script src="https://cdn.tailwindcss.com" defer></script>
     <!-- Tailwind-Konfiguration -->
-    <script>
+    <script defer>
         tailwind.config = {
             theme: {
                 extend: {
@@ -23,73 +26,89 @@
             }
         }
     </script>
+    <!-- Font Awesome für Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="..." crossorigin="anonymous">
+
+    <!-- Smooth Scroll Behavior -->
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        /* Optimierter Farbkontrast */
+        .text-gray-800 {
+            color: #1a1a1a;
+        }
+        .bg-gray-100 {
+            background-color: #f5f5f5;
+        }
+    </style>
 </head>
 <body class="font-sans bg-gray-100 scroll-smooth">
 
     <!-- Header -->
-    <header class="bg-white fixed w-full top-0 z-50 shadow">
-        <div class="container mx-auto px-6 py-4 flex items-center justify-between">
+    <header class="bg-white fixed w-full top-0 z-50 shadow" role="banner">
+        <div class="container mx-auto px-4 py-4 flex items-center justify-between">
             <div class="logo">
-                <a href="#hero"><img src="logo.png" alt="ND Photography Logo" class="h-12"></a>
+                <a href="#hero"><img src="logo.png" alt="ND Photography Logo" class="h-10"></a>
             </div>
-            <nav class="hidden md:flex space-x-10">
-                <a href="#hero" class="text-gray-800 font-semibold hover:text-primary">Home</a>
-                <a href="#about" class="text-gray-800 font-semibold hover:text-primary">Über mich</a>
-                <a href="#services" class="text-gray-800 font-semibold hover:text-primary">Services</a>
-                <a href="#portfolio" class="text-gray-800 font-semibold hover:text-primary">Portfolio</a>
-                <a href="#contact" class="text-gray-800 font-semibold hover:text-primary">Kontakt</a>
+            <nav class="hidden md:flex space-x-6" aria-label="Hauptnavigation">
+                <a href="#hero" class="text-gray-800 font-semibold hover:text-primary focus:outline-none focus:ring-2 focus:ring-primary">Home</a>
+                <a href="#about" class="text-gray-800 font-semibold hover:text-primary focus:outline-none focus:ring-2 focus:ring-primary">Über mich</a>
+                <a href="#services" class="text-gray-800 font-semibold hover:text-primary focus:outline-none focus:ring-2 focus:ring-primary">Services</a>
+                <a href="#portfolio" class="text-gray-800 font-semibold hover:text-primary focus:outline-none focus:ring-2 focus:ring-primary">Portfolio</a>
+                <a href="#contact" class="text-gray-800 font-semibold hover:text-primary focus:outline-none focus:ring-2 focus:ring-primary">Kontakt</a>
             </nav>
             <div class="md:hidden">
-                <button id="menu-btn" class="text-gray-800 text-2xl focus:outline-none">
+                <button id="menu-btn" class="text-gray-800 text-2xl focus:outline-none" aria-label="Menü" aria-expanded="false" aria-controls="mobile-menu">
                     <i class="fas fa-bars"></i>
                 </button>
             </div>
         </div>
         <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white shadow">
-            <nav class="px-6 pt-4 pb-4 space-y-4">
-                <a href="#hero" class="block text-gray-800 font-semibold hover:text-primary">Home</a>
-                <a href="#about" class="block text-gray-800 font-semibold hover:text-primary">Über mich</a>
-                <a href="#services" class="block text-gray-800 font-semibold hover:text-primary">Services</a>
-                <a href="#portfolio" class="block text-gray-800 font-semibold hover:text-primary">Portfolio</a>
-                <a href="#contact" class="block text-gray-800 font-semibold hover:text-primary">Kontakt</a>
+        <div id="mobile-menu" class="hidden md:hidden bg-white shadow" role="navigation" aria-label="Mobile Hauptnavigation">
+            <nav class="px-4 pt-4 pb-2 space-y-2">
+                <a href="#hero" class="block text-gray-800 font-semibold hover:text-primary focus:outline-none focus:ring-2 focus:ring-primary">Home</a>
+                <a href="#about" class="block text-gray-800 font-semibold hover:text-primary focus:outline-none focus:ring-2 focus:ring-primary">Über mich</a>
+                <a href="#services" class="block text-gray-800 font-semibold hover:text-primary focus:outline-none focus:ring-2 focus:ring-primary">Services</a>
+                <a href="#portfolio" class="block text-gray-800 font-semibold hover:text-primary focus:outline-none focus:ring-2 focus:ring-primary">Portfolio</a>
+                <a href="#contact" class="block text-gray-800 font-semibold hover:text-primary focus:outline-none focus:ring-2 focus:ring-primary">Kontakt</a>
             </nav>
         </div>
     </header>
 
     <!-- Hero Section -->
-    <section id="hero" class="pt-28 md:pt-36 pb-16 bg-gray-100">
-        <!-- Begrenzung der maximalen Breite auf 1100px und zentrieren -->
-        <div class="container mx-auto px-6 max-w-[1100px]">
+    <main>
+    <section id="hero" class="pt-24 md:pt-32 pb-12 bg-gray-100">
+        <div class="container mx-auto px-4">
             <!-- Bildraster -->
-            <div class="grid grid-cols-2 gap-6">
-                <!-- Bilder -->
-                <img src="https://mediamag.mediamarkt.at/fileadmin/_processed_/e/0/csm_header-foto-stativ-1163005766_pixelfusion3d_iStock_a13b747c84.jpg" alt="Bild 1" class="w-full h-56 object-cover rounded-lg shadow-lg">
-                <img src="https://blog.lens-aid.de/wp-content/uploads/2021/01/Lavendelfeld-Fotografie-Licht.jpg" alt="Bild 2" class="w-full h-56 object-cover rounded-lg shadow-lg">
-                <img src="https://www.c-and-a.com/image/upload/q_auto:good,ar_4:3,c_fill,g_auto:face,w_757/s/editorial/fotografie/fotografieren-kategorie-text-media-header.jpg" alt="Bild 3" class="w-full h-56 object-cover rounded-lg shadow-lg">
-                <img src="https://www.americanexpress.com/de-de/amexcited/media/cache/article_intro_hero/cms/2022/12/glaskugel-fotografieren-glaskugel-vor-stadtkulisse-im-abendlicht.jpg?818430" alt="Bild 4" class="w-full h-56 object-cover rounded-lg shadow-lg">
+            <div class="grid grid-cols-2 gap-4 max-w-md mx-auto md:max-w-4xl">
+                <!-- Bilder mit Lazy Loading und srcset -->
+                <img data-src="https://mediamag.mediamarkt.at/fileadmin/_processed_/e/0/csm_header-foto-stativ-1163005766_pixelfusion3d_iStock_a13b747c84.jpg" alt="Bild 1" class="lazy w-full h-40 object-cover rounded-lg shadow-lg" width="600" height="400">
+                <img data-src="https://blog.lens-aid.de/wp-content/uploads/2021/01/Lavendelfeld-Fotografie-Licht.jpg" alt="Bild 2" class="lazy w-full h-40 object-cover rounded-lg shadow-lg" width="600" height="400">
+                <img data-src="https://www.c-and-a.com/image/upload/q_auto:good,ar_4:3,c_fill,g_auto:face,w_757/s/editorial/fotografie/fotografieren-kategorie-text-media-header.jpg" alt="Bild 3" class="lazy w-full h-40 object-cover rounded-lg shadow-lg" width="600" height="400">
+                <img data-src="https://www.americanexpress.com/de-de/amexcited/media/cache/article_intro_hero/cms/2022/12/glaskugel-fotografieren-glaskugel-vor-stadtkulisse-im-abendlicht.jpg?818430" alt="Bild 4" class="lazy w-full h-40 object-cover rounded-lg shadow-lg" width="600" height="400">
             </div>
             <!-- Slogan und CTA -->
-            <div class="mt-12 text-center">
-                <h1 class="text-4xl md:text-6xl font-bold text-gray-800">Ihre Momente - perfekt eingefangen.</h1>
-                <p class="mt-6 text-xl md:text-2xl text-gray-600">Authentische Portrait- und Eventfotografie – Ihre Augenblicke für die Ewigkeit.</p>
-                <a href="#contact" class="inline-block mt-8 px-10 py-4 border-2 border-primary text-primary font-semibold rounded-full hover:bg-primary hover:text-white transition duration-300">Buche dein Moment!</a>
+            <div class="mt-8 text-center">
+                <h1 class="text-3xl md:text-5xl font-bold text-gray-800">Ihre Momente - perfekt eingefangen.</h1>
+                <p class="mt-4 text-lg md:text-xl text-gray-600">Authentische Portrait- und Eventfotografie – Ihre Augenblicke für die Ewigkeit.</p>
+                <a href="#contact" class="inline-block mt-6 px-6 py-3 border-2 border-primary text-primary font-semibold rounded-full hover:bg-primary hover:text-white transition duration-300 focus:outline-none focus:ring-2 focus:ring-primary">Buche dein Moment!</a>
             </div>
             <!-- Kurze Beschreibung der Services -->
-            <div class="mt-16 grid grid-cols-1 md:grid-cols-3 gap-10">
+            <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6">
                 <!-- Service 1 -->
-                <div class="bg-white p-8 rounded-lg shadow-lg text-center">
-                    <h3 class="text-2xl font-semibold mb-4">Business Fotografie</h3>
+                <div class="bg-white p-6 rounded-lg shadow-lg text-center">
+                    <h3 class="text-xl font-semibold mb-2">Business Fotografie</h3>
                     <p class="text-gray-600">Perfekt für professionelle Headshots, Teamfotos und Produktfotos.</p>
                 </div>
                 <!-- Service 2 -->
-                <div class="bg-white p-8 rounded-lg shadow-lg text-center">
-                    <h3 class="text-2xl font-semibold mb-4">Porträts & Events</h3>
+                <div class="bg-white p-6 rounded-lg shadow-lg text-center">
+                    <h3 class="text-xl font-semibold mb-2">Porträts & Events</h3>
                     <p class="text-gray-600">Individuelle Porträt- und Eventfotografie für persönliche und geschäftliche Anlässe.</p>
                 </div>
                 <!-- Service 3 -->
-                <div class="bg-white p-8 rounded-lg shadow-lg text-center">
-                    <h3 class="text-2xl font-semibold mb-4">Photoshop-Service</h3>
+                <div class="bg-white p-6 rounded-lg shadow-lg text-center">
+                    <h3 class="text-xl font-semibold mb-2">Photoshop-Service</h3>
                     <p class="text-gray-600">Detailreiche Retusche und Optimierung Ihrer Bilder.</p>
                 </div>
             </div>
@@ -97,192 +116,245 @@
     </section>
 
     <!-- Über mich Section -->
-    <section id="about" class="py-20 bg-white">
-        <div class="container mx-auto px-6 max-w-[1100px]">
-            <h2 class="text-4xl font-bold text-center text-gray-800 mb-8">Über mich</h2>
-            <!-- Flex-Layout für Desktop und responsiv für Mobile -->
-            <div class="mt-16 flex flex-col md:flex-row items-center gap-12">
+    <section id="about" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-800">Über mich</h2>
+            <div class="mt-8 flex flex-col md:flex-row items-center">
                 <!-- Textbereich -->
-                <div class="md:w-1/2">
-                    <p class="text-gray-600 mb-6">
+                <div class="md:w-1/2 md:pr-6">
+                    <p class="mt-6 text-gray-600">
                         Seit meiner Jugend beschäftige ich mich mit Fotografie und halte unvergessliche Momente fest – ob bei Porträts, Business-Shootings oder Events. Mit jedem Bild erzähle ich eine Geschichte und sorge dafür, dass Ihre Erinnerungen lebendig bleiben.
                     </p>
-                    <p class="text-gray-600">
-                        Als leidenschaftlicher Fotograf mit langjähriger Erfahrung im Bereich der Portrait- und Eventfotografie sorge ich dafür, dass Ihre schönsten Momente unvergesslich bleiben. Egal ob Business-Shootings, private Porträts oder besondere Events – jedes Bild fängt Emotionen und einzigartige Augenblicke ein.
+                    <p class="mt-4 text-gray-600">
+                        Als leidenschaftlicher Fotograf mit langjähriger Erfahrung im Bereich der Portrait- und Eventfotografie sorge ich dafür, dass Ihre schönsten Momente unvergesslich bleiben.
                     </p>
                 </div>
-                <!-- Bildbereich -->
-                <div class="md:w-1/2">
-                    <img src="https://s3-eu-west-1.amazonaws.com/yousty-switzerland/apprenticeship_jobs%2F1494%2Fjob_finder_image%2Ff59db1c54ca12f87f73e859eb1e51e4f%2F1494.jpg" alt="Fotograf" class="rounded-lg shadow-lg w-full h-auto">
+                <!-- Bildbereich mit Lazy Loading -->
+                <div class="md:w-1/2 md:pl-6 mb-6 md:mb-0">
+                    <img data-src="https://s3-eu-west-1.amazonaws.com/yousty-switzerland/apprenticeship_jobs%2F1494%2Fjob_finder_image%2Ff59db1c54ca12f87f73e859eb1e51e4f%2F1494.jpg" alt="Fotograf" class="lazy rounded-lg shadow-lg w-full h-auto" width="600" height="400">
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Services Section -->
-    <section id="services" class="py-20 bg-gray-100">
-        <div class="container mx-auto px-6 max-w-[1100px]">
-            <h2 class="text-4xl font-bold text-center text-gray-800 mb-8">Service</h2>
-            <p class="mt-6 text-gray-600 text-center max-w-3xl mx-auto">
+    <section id="services" class="py-16 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-800">Service</h2>
+            <p class="mt-6 text-gray-600 text-center max-w-2xl mx-auto">
                 Ob es der freudige Ausdruck eines Brautpaares, die lebendige Energie einer Feier oder das stille Lächeln eines Kindes ist – jedes Bild erzählt eine einzigartige Geschichte.
             </p>
-            <div class="mt-16 space-y-16">
+            <div class="mt-12 space-y-12">
                 <!-- Service 1 -->
-                <div class="flex flex-col md:flex-row items-center gap-8">
+                <div class="flex flex-col md:flex-row items-center">
                     <div class="md:w-1/2">
-                        <img src="https://www.boris-baldinger.com/content/uploads/2024/04/B1_03691_3840px-1024x683.jpg" alt="Business Fotografie" class="rounded-lg shadow-lg w-full h-80 object-cover">
+                        <img data-src="https://www.boris-baldinger.com/content/uploads/2024/04/B1_03691_3840px-1024x683.jpg" alt="Business Fotografie" class="lazy rounded-lg shadow-lg w-full h-64 object-cover" width="600" height="400">
                     </div>
-                    <div class="md:w-1/2 md:pl-12 mt-8 md:mt-0">
-                        <h3 class="text-3xl font-semibold mb-4">Business Fotografie</h3>
-                        <p class="text-gray-600 mb-6">
+                    <div class="md:w-1/2 md:pl-8 mt-6 md:mt-0">
+                        <h3 class="text-2xl font-semibold mb-4">Business Fotografie</h3>
+                        <p class="text-gray-600 mb-4">
                             Perfekt für professionelle Headshots, Teamfotos oder Produktfotos für Ihre Unternehmenswebsite.
                         </p>
-                        <p class="text-gray-600 font-bold mb-6">Preis: ab 199.- EUR</p>
-                        <a href="#contact" class="px-8 py-3 bg-primary text-white font-semibold rounded hover:bg-red-600 transition duration-300">Anfragen</a>
+                        <p class="text-gray-600 font-bold mb-4">Preis: ab 199.- EUR</p>
+                        <a href="#contact" class="px-6 py-2 bg-primary text-white font-semibold rounded hover:bg-red-600 transition duration-300 focus:outline-none focus:ring-2 focus:ring-primary">Anfragen</a>
                     </div>
                 </div>
                 <!-- Service 2 -->
-                <div class="flex flex-col md:flex-row items-center gap-8">
-                    <div class="md:w-1/2 md:order-2">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3nIZZ_lE7xePflmla8PfZpL7KqZ12meo75g&s" alt="Porträts & Events" class="rounded-lg shadow-lg w-full h-80 object-cover">
+                <div class="flex flex-col md:flex-row items-center md:flex-row-reverse">
+                    <div class="md:w-1/2">
+                        <img data-src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3nIZZ_lE7xePflmla8PfZpL7KqZ12meo75g&s" alt="Porträts & Events" class="lazy rounded-lg shadow-lg w-full h-64 object-cover" width="600" height="400">
                     </div>
-                    <div class="md:w-1/2 md:pr-12 mt-8 md:mt-0 md:order-1">
-                        <h3 class="text-3xl font-semibold mb-4">Porträts & Events</h3>
-                        <p class="text-gray-600 mb-6">
-                            Porträt- und Eventfotografie für jegliche Anlässe, um unvergessliche Momente festzuhalten – Hochzeiten, Familienfeste und mehr.
+                    <div class="md:w-1/2 md:pr-8 mt-6 md:mt-0">
+                        <h3 class="text-2xl font-semibold mb-4">Porträts & Events</h3>
+                        <p class="text-gray-600 mb-4">
+                            Porträt- und Eventfotografie für jegliche Anlässe, um unvergessliche Momente festzuhalten.
                         </p>
-                        <p class="text-gray-600 font-bold mb-6">Preis: ab 299.- EUR</p>
-                        <a href="#contact" class="px-8 py-3 bg-primary text-white font-semibold rounded hover:bg-red-600 transition duration-300">Anfragen</a>
+                        <p class="text-gray-600 font-bold mb-4">Preis: ab 299.- EUR</p>
+                        <a href="#contact" class="px-6 py-2 bg-primary text-white font-semibold rounded hover:bg-red-600 transition duration-300 focus:outline-none focus:ring-2 focus:ring-primary">Anfragen</a>
                     </div>
                 </div>
                 <!-- Service 3 -->
-                <div class="flex flex-col md:flex-row items-center gap-8">
+                <div class="flex flex-col md:flex-row items-center">
                     <div class="md:w-1/2">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAl2XaLCqdyDvGjg6367b5s5nckbupXHFtyA&s" alt="Photoshop-Service" class="rounded-lg shadow-lg w-full h-80 object-cover">
+                        <img data-src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAl2XaLCqdyDvGjg6367b5s5nckbupXHFtyA&s" alt="Photoshop-Service" class="lazy rounded-lg shadow-lg w-full h-64 object-cover" width="600" height="400">
                     </div>
-                    <div class="md:w-1/2 md:pl-12 mt-8 md:mt-0">
-                        <h3 class="text-3xl font-semibold mb-4">Photoshop-Service</h3>
-                        <p class="text-gray-600 mb-6">
-                            Detailreiche Retusche und Optimierung Ihrer Bilder, um das Beste aus jedem Foto herauszuholen. Wir bieten Web-Optimierung und Bildbearbeitung für höchste Qualität.
+                    <div class="md:w-1/2 md:pl-8 mt-6 md:mt-0">
+                        <h3 class="text-2xl font-semibold mb-4">Photoshop-Service</h3>
+                        <p class="text-gray-600 mb-4">
+                            Detailreiche Retusche und Optimierung Ihrer Bilder, um das Beste aus jedem Foto herauszuholen.
                         </p>
-                        <p class="text-gray-600 font-bold mb-6">Preis: ab 19.- EUR</p>
-                        <a href="#contact" class="px-8 py-3 bg-primary text-white font-semibold rounded hover:bg-red-600 transition duration-300">Anfragen</a>
+                        <p class="text-gray-600 font-bold mb-4">Preis: ab 19.- EUR</p>
+                        <a href="#contact" class="px-6 py-2 bg-primary text-white font-semibold rounded hover:bg-red-600 transition duration-300 focus:outline-none focus:ring-2 focus:ring-primary">Anfragen</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-<!-- Portfolio Section -->
-    <section id="portfolio" class="py-20 bg-white">
-        <div class="container mx-auto px-6 max-w-[1100px]">
-            <h2 class="text-4xl font-bold text-center text-gray-800 mb-8">Portfolio</h2>
-            <p class="mt-6 text-gray-600 text-center max-w-3xl mx-auto">
-                Eine Auswahl meiner besten Arbeiten – Porträts, Business-Shootings und Events. Jedes Bild fängt besondere Momente auf einzigartige Weise ein und erzählt eine individuelle Geschichte.
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-800">Portfolio</h2>
+            <p class="mt-6 text-gray-600 text-center max-w-2xl mx-auto">
+                Eine Auswahl meiner besten Arbeiten – Porträts, Business-Shootings und Events.
             </p>
             <!-- Kategorien -->
-            <div class="mt-12 flex justify-center space-x-6">
-                <button class="filter-button px-6 py-3 bg-primary text-white font-semibold rounded hover:bg-red-600 transition duration-300" data-category="all">Alle</button>
-                <button class="filter-button px-6 py-3 bg-primary text-white font-semibold rounded hover:bg-red-600 transition duration-300" data-category="business">Business</button>
-                <button class="filter-button px-6 py-3 bg-primary text-white font-semibold rounded hover:bg-red-600 transition duration-300" data-category="portraits">Porträts</button>
-                <button class="filter-button px-6 py-3 bg-primary text-white font-semibold rounded hover:bg-red-600 transition duration-300" data-category="events">Events</button>
+            <div class="mt-8 flex justify-center space-x-4">
+                <button class="filter-button px-4 py-2 bg-primary text-white font-semibold rounded hover:bg-red-600 transition duration-300 focus:outline-none focus:ring-2 focus:ring-primary" data-category="all">Alle</button>
+                <button class="filter-button px-4 py-2 bg-primary text-white font-semibold rounded hover:bg-red-600 transition duration-300 focus:outline-none focus:ring-2 focus:ring-primary" data-category="business">Business</button>
+                <button class="filter-button px-4 py-2 bg-primary text-white font-semibold rounded hover:bg-red-600 transition duration-300 focus:outline-none focus:ring-2 focus:ring-primary" data-category="portraits">Porträts</button>
+                <button class="filter-button px-4 py-2 bg-primary text-white font-semibold rounded hover:bg-red-600 transition duration-300 focus:outline-none focus:ring-2 focus:ring-primary" data-category="events">Events</button>
             </div>
             <!-- Bildergalerie -->
-            <div class="mt-16 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+            <div class="mt-10 grid grid-cols-2 md:grid-cols-4 gap-4">
                 <!-- Business Bilder -->
                 <div class="portfolio-item category-business">
-                    <img src="https://www.boris-baldinger.com/content/uploads/2024/04/B1_03691_3840px-1024x683.jpg" alt="Business Bild 2" class="rounded-lg shadow-lg w-full h-56 object-cover">
+                    <img data-src="https://www.boris-baldinger.com/content/uploads/2024/04/B1_03691_3840px-1024x683.jpg" alt="Business Bild 1" class="lazy rounded-lg shadow-lg w-full h-40 object-cover" width="600" height="400">
+                </div>
+                <div class="portfolio-item category-business">
+                    <img data-src="https://www.boris-baldinger.com/content/uploads/2024/04/B1_03691_3840px-1024x683.jpg" alt="Business Bild 2" class="lazy rounded-lg shadow-lg w-full h-40 object-cover" width="600" height="400">
                 </div>
                 <!-- Porträts Bilder -->
                 <div class="portfolio-item category-portraits">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3nIZZ_lE7xePflmla8PfZpL7KqZ12meo75g&s" alt="Porträt Bild 2" class="rounded-lg shadow-lg w-full h-56 object-cover">
+                    <img data-src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3nIZZ_lE7xePflmla8PfZpL7KqZ12meo75g&s" alt="Porträt Bild 1" class="lazy rounded-lg shadow-lg w-full h-40 object-cover" width="600" height="400">
+                </div>
+                <div class="portfolio-item category-portraits">
+                    <img data-src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3nIZZ_lE7xePflmla8PfZpL7KqZ12meo75g&s" alt="Porträt Bild 2" class="lazy rounded-lg shadow-lg w-full h-40 object-cover" width="600" height="400">
                 </div>
                 <!-- Events Bilder -->
                 <div class="portfolio-item category-events">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAl2XaLCqdyDvGjg6367b5s5nckbupXHFtyA&s" alt="Event Bild 2" class="rounded-lg shadow-lg w-full h-56 object-cover">
+                    <img data-src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAl2XaLCqdyDvGjg6367b5s5nckbupXHFtyA&s" alt="Event Bild 1" class="lazy rounded-lg shadow-lg w-full h-40 object-cover" width="600" height="400">
+                </div>
+                <div class="portfolio-item category-events">
+                    <img data-src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAl2XaLCqdyDvGjg6367b5s5nckbupXHFtyA&s" alt="Event Bild 2" class="lazy rounded-lg shadow-lg w-full h-40 object-cover" width="600" height="400">
                 </div>
                 <!-- Weitere Bilder hinzufügen -->
             </div>
         </div>
     </section>
 
-
     <!-- Kontakt Section -->
-    <section id="contact" class="py-20 bg-gray-100">
-        <div class="container mx-auto px-6 max-w-[1100px]">
-            <h2 class="text-4xl font-bold text-center text-gray-800 mb-8">Kontaktanfrage</h2>
-            <p class="mt-6 text-gray-600 text-center max-w-3xl mx-auto">
-                Haben Sie Fragen oder möchten Sie einen Termin vereinbaren? Kontaktieren Sie mich gerne für eine professionelle Fotografie von Business-Shootings, Porträts oder Events.
+    <section id="contact" class="py-16 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-800">Kontaktanfrage</h2>
+            <p class="mt-6 text-gray-600 text-center max-w-2xl mx-auto">
+                Haben Sie Fragen oder möchten Sie einen Termin vereinbaren?
             </p>
-            <form action="mailto:info@ndphotography.de" method="post" enctype="text/plain" class="mt-12 max-w-lg mx-auto">
-                <div class="flex flex-col gap-6">
-                    <input type="text" name="vorname" placeholder="Vorname" required class="px-6 py-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary">
-                    <input type="text" name="name" placeholder="Name" required class="px-6 py-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary">
-                    <input type="email" name="email" placeholder="Ihre E-Mail" required class="px-6 py-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary">
-                    <input type="tel" name="phone" placeholder="Mobilnummer" class="px-6 py-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary">
-                    <textarea name="anfrage" placeholder="Anfrage" required class="px-6 py-4 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary h-40"></textarea>
-                    <button type="submit" class="px-8 py-4 bg-primary text-white font-semibold rounded hover:bg-red-600 transition duration-300">Buche dein Moment!</button>
+            <form action="mailto:info@ndphotography.de" method="post" enctype="text/plain" class="mt-8 max-w-md mx-auto">
+                <div class="flex flex-col gap-4">
+                    <label for="vorname" class="sr-only">Vorname</label>
+                    <input type="text" id="vorname" name="vorname" placeholder="Vorname" required class="px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary">
+                    <label for="name" class="sr-only">Name</label>
+                    <input type="text" id="name" name="name" placeholder="Name" required class="px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary">
+                    <label for="email" class="sr-only">Ihre E-Mail</label>
+                    <input type="email" id="email" name="email" placeholder="Ihre E-Mail" required class="px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary">
+                    <label for="phone" class="sr-only">Mobilnummer</label>
+                    <input type="tel" id="phone" name="phone" placeholder="Mobilnummer" class="px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary">
+                    <label for="anfrage" class="sr-only">Anfrage</label>
+                    <textarea id="anfrage" name="anfrage" placeholder="Anfrage" required class="px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary h-32"></textarea>
+                    <button type="submit" class="px-6 py-2 bg-primary text-white font-semibold rounded hover:bg-red-600 transition duration-300 focus:outline-none focus:ring-2 focus:ring-primary">Buche dein Moment!</button>
                 </div>
             </form>
             <!-- Social Media Links -->
-            <div class="mt-16 flex justify-center space-x-8">
-                <a href="#" class="text-2xl text-gray-800 hover:text-primary"><i class="fab fa-facebook-f"></i></a>
-                <a href="#" class="text-2xl text-gray-800 hover:text-primary"><i class="fab fa-instagram"></i></a>
-                <a href="#" class="text-2xl text-gray-800 hover:text-primary"><i class="fab fa-twitter"></i></a>
+            <div class="mt-8 flex justify-center space-x-4">
+                <a href="#" class="text-xl text-gray-800 hover:text-primary focus:outline-none focus:ring-2 focus:ring-primary" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="text-xl text-gray-800 hover:text-primary focus:outline-none focus:ring-2 focus:ring-primary" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="text-xl text-gray-800 hover:text-primary focus:outline-none focus:ring-2 focus:ring-primary" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
             </div>
         </div>
     </section>
+    </main>
 
     <!-- Footer -->
-    <footer class="bg-secondary text-white py-12">
-        <div class="container mx-auto px-6 text-center">
-            <p class="text-lg">&copy; 2024 ND Photography. Alle Rechte vorbehalten.</p>
-            <ul class="mt-6 flex justify-center space-x-8">
-                <li><a href="#hero" class="hover:text-primary">Home</a></li>
-                <li><a href="#about" class="hover:text-primary">Über mich</a></li>
-                <li><a href="#services" class="hover:text-primary">Services</a></li>
-                <li><a href="#portfolio" class="hover:text-primary">Portfolio</a></li>
-                <li><a href="#contact" class="hover:text-primary">Kontakt</a></li>
-                <li><a href="impressum.html" class="hover:text-primary">Impressum</a></li>
+    <footer class="bg-secondary text-white py-8" role="contentinfo">
+        <div class="container mx-auto px-4 text-center">
+            <p>&copy; 2024 ND Photography. Alle Rechte vorbehalten.</p>
+            <ul class="mt-4 flex flex-col md:flex-row justify-center space-y-2 md:space-y-0 md:space-x-4">
+                <li><a href="#hero" class="hover:text-primary focus:outline-none focus:ring-2 focus:ring-primary">Home</a></li>
+                <li><a href="#about" class="hover:text-primary focus:outline-none focus:ring-2 focus:ring-primary">Über mich</a></li>
+                <li><a href="#services" class="hover:text-primary focus:outline-none focus:ring-2 focus:ring-primary">Services</a></li>
+                <li><a href="#portfolio" class="hover:text-primary focus:outline-none focus:ring-2 focus:ring-primary">Portfolio</a></li>
+                <li><a href="#contact" class="hover:text-primary focus:outline-none focus:ring-2 focus:ring-primary">Kontakt</a></li>
+                <li><a href="impressum.html" class="hover:text-primary focus:outline-none focus:ring-2 focus:ring-primary">Impressum</a></li>
             </ul>
-            <div class="mt-8 flex justify-center space-x-8">
-                <a href="#" class="text-2xl hover:text-primary"><i class="fab fa-facebook-f"></i></a>
-                <a href="#" class="text-2xl hover:text-primary"><i class="fab fa-instagram"></i></a>
-                <a href="#" class="text-2xl hover:text-primary"><i class="fab fa-twitter"></i></a>
+            <div class="mt-4 flex justify-center space-x-4">
+                <a href="#" class="text-xl hover:text-primary focus:outline-none focus:ring-2 focus:ring-primary" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="text-xl hover:text-primary focus:outline-none focus:ring-2 focus:ring-primary" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="text-xl hover:text-primary focus:outline-none focus:ring-2 focus:ring-primary" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
             </div>
         </div>
     </footer>
 
     <!-- JavaScript für das Hamburger Menü und den Portfolio-Filter -->
-    <script>
+    <script defer>
+        // Debouncing-Funktion
+        function debounce(func, wait = 10, immediate = true) {
+            let timeout;
+            return function() {
+                const context = this, args = arguments;
+                const later = function() {
+                    timeout = null;
+                    if (!immediate) func.apply(context, args);
+                };
+                const callNow = immediate && !timeout;
+                clearTimeout(timeout);
+                timeout = setTimeout(later, wait);
+                if (callNow) func.apply(context, args);
+            };
+        }
+
         // Hamburger Menü
         const menuBtn = document.getElementById('menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
 
         menuBtn.addEventListener('click', () => {
+            const expanded = menuBtn.getAttribute('aria-expanded') === 'true' || false;
+            menuBtn.setAttribute('aria-expanded', !expanded);
             mobileMenu.classList.toggle('hidden');
         });
 
         // Portfolio Filter
         const filterButtons = document.querySelectorAll('.filter-button');
-        const portfolioItems = document.querySelectorAll('.grid-cols-1 > img, .category-business, .category-portraits, .category-events');
+        const portfolioItems = document.querySelectorAll('.portfolio-item');
 
         filterButtons.forEach(button => {
             button.addEventListener('click', () => {
                 const category = button.getAttribute('data-category');
 
                 portfolioItems.forEach(item => {
-                    if (category === 'all') {
+                    if (category === 'all' || item.classList.contains(`category-${category}`)) {
                         item.style.display = 'block';
                     } else {
-                        if (item.classList.contains(`category-${category}`)) {
-                            item.style.display = 'block';
-                        } else {
-                            item.style.display = 'none';
-                        }
+                        item.style.display = 'none';
                     }
                 });
             });
+        });
+
+        // Lazy Loading mit IntersectionObserver
+        document.addEventListener('DOMContentLoaded', function() {
+            const lazyImages = document.querySelectorAll('.lazy');
+            if ('IntersectionObserver' in window) {
+                const imageObserver = new IntersectionObserver((entries, observer) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            const image = entry.target;
+                            image.src = image.getAttribute('data-src');
+                            image.classList.remove('lazy');
+                            imageObserver.unobserve(image);
+                        }
+                    });
+                });
+                lazyImages.forEach(image => {
+                    imageObserver.observe(image);
+                });
+            } else {
+                // Fallback für ältere Browser
+                lazyImages.forEach(image => {
+                    image.src = image.getAttribute('data-src');
+                    image.classList.remove('lazy');
+                });
+            }
         });
     </script>
 
