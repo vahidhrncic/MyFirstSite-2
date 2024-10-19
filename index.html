@@ -111,7 +111,7 @@
                     </p>
                 </div>
                 <!-- Bildbereich mit Lazy Loading -->
-                <div class="md:w-1/2 md:pl-6 mb-2 mt-6 md:mb-0">
+                <div class="md:w-1/2 md:pl-6 mb-2 mt-6 md:mt-0">
                     <img data-src="IMG_05.webp" alt="Fotograf" class="lazy rounded-lg shadow-lg w-full h-auto" width="600" height="400">
                 </div>
             </div>
@@ -151,7 +151,8 @@
                             Porträt- und Eventfotografie für jegliche Anlässe, um unvergessliche Momente festzuhalten.
                         </p>
                         <p class="text-gray-600 font-bold mb-4">Preis: ab 299.- EUR</p>
-                        <a href="#contact" class="px-6 py-2 bg-red-500 text-white font-semibold rounded hover:bg-red-600 transition duration-300 focus wo :outline-none focus:ring-2 focus:ring-red-500">Anfragen</a>
+                        <!-- Tippfehler in der Klasse korrigiert -->
+                        <a href="#contact" class="px-6 py-2 bg-red-500 text-white font-semibold rounded hover:bg-red-600 transition duration-300 focus:outline-none focus:ring-2 focus:ring-red-500">Anfragen</a>
                     </div>
                 </div>
                 <!-- Service 3 -->
@@ -190,24 +191,24 @@
             <div class="mt-10 grid grid-cols-2 md:grid-cols-4 gap-4">
                 <!-- Business Bilder -->
                 <div class="portfolio-item category-business">
-                    <img data-src="https://www.boris-baldinger.com/content/uploads/2024/04/B1_03691_3840px-1024x683.jpg" alt="Business Bild 1" class="lazy rounded-lg shadow-lg w-full h-40 object-cover" width="600" height="400">
+                    <img data-src="IMG_business1.webp" alt="Business Bild 1" class="lazy rounded-lg shadow-lg w-full h-40 object-cover" width="600" height="400">
                 </div>
                 <div class="portfolio-item category-business">
-                    <img data-src="https://www.boris-baldinger.com/content/uploads/2024/04/B1_03691_3840px-1024x683.jpg" alt="Business Bild 2" class="lazy rounded-lg shadow-lg w-full h-40 object-cover" width="600" height="400">
+                    <img data-src="IMG_business2.webp" alt="Business Bild 2" class="lazy rounded-lg shadow-lg w-full h-40 object-cover" width="600" height="400">
                 </div>
                 <!-- Porträts Bilder -->
                 <div class="portfolio-item category-portraits">
-                    <img data-src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3nIZZ_lE7xePflmla8PfZpL7KqZ12meo75g&s" alt="Porträt Bild 1" class="lazy rounded-lg shadow-lg w-full h-40 object-cover" width="600" height="400">
+                    <img data-src="IMG_portrait1.webp" alt="Porträt Bild 1" class="lazy rounded-lg shadow-lg w-full h-40 object-cover" width="600" height="400">
                 </div>
                 <div class="portfolio-item category-portraits">
-                    <img data-src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3nIZZ_lE7xePflmla8PfZpL7KqZ12meo75g&s" alt="Porträt Bild 2" class="lazy rounded-lg shadow-lg w-full h-40 object-cover" width="600" height="400">
+                    <img data-src="IMG_portrait2.webp" alt="Porträt Bild 2" class="lazy rounded-lg shadow-lg w-full h-40 object-cover" width="600" height="400">
                 </div>
                 <!-- Events Bilder -->
                 <div class="portfolio-item category-events">
-                    <img data-src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAl2XaLCqdyDvGjg6367b5s5nckbupXHFtyA&s" alt="Event Bild 1" class="lazy rounded-lg shadow-lg w-full h-40 object-cover" width="600" height="400">
+                    <img data-src="IMG_event1.webp" alt="Event Bild 1" class="lazy rounded-lg shadow-lg w-full h-40 object-cover" width="600" height="400">
                 </div>
                 <div class="portfolio-item category-events">
-                    <img data-src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAl2XaLCqdyDvGjg6367b5s5nckbupXHFtyA&s" alt="Event Bild 2" class="lazy rounded-lg shadow-lg w-full h-40 object-cover" width="600" height="400">
+                    <img data-src="IMG_event2.webp" alt="Event Bild 2" class="lazy rounded-lg shadow-lg w-full h-40 object-cover" width="600" height="400">
                 </div>
                 <!-- Weitere Bilder hinzufügen -->
             </div>
@@ -236,7 +237,6 @@
                     <button type="submit" class="px-6 py-2 bg-red-500 text-white font-semibold rounded hover:bg-red-600 transition duration-300 focus:outline-none focus:ring-2 focus:ring-red-500">Buche dein Moment!</button>
                 </div>
             </form>
- 
         </div>
     </section>
     </main>
@@ -263,22 +263,6 @@
 
     <!-- JavaScript für das Hamburger Menü und den Portfolio-Filter -->
     <script defer>
-        // Debouncing-Funktion
-        function debounce(func, wait = 10, immediate = true) {
-            let timeout;
-            return function() {
-                const context = this, args = arguments;
-                const later = function() {
-                    timeout = null;
-                    if (!immediate) func.apply(context, args);
-                };
-                const callNow = immediate && !timeout;
-                clearTimeout(timeout);
-                timeout = setTimeout(later, wait);
-                if (callNow) func.apply(context, args);
-            };
-        }
-
         // Hamburger Menü
         const menuBtn = document.getElementById('menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
@@ -298,7 +282,7 @@
                 const category = button.getAttribute('data-category');
 
                 portfolioItems.forEach(item => {
-                    if (category === 'all' || item.classList.contains(`category-`)) {
+                    if (category === 'all' || item.classList.contains(`category-${category}`)) {
                         item.style.display = 'block';
                     } else {
                         item.style.display = 'none';
