@@ -1,17 +1,33 @@
 // script.js
 
         // Header Hamburger-Menü
-        const headerMenuBtn = document.getElementById('header-menu-btn');
-        const headerMobileMenu = document.getElementById('header-mobile-menu');
+        document.addEventListener('DOMContentLoaded', () => {
+            // Header Hamburger-Menü
+            const headerMenuBtn = document.getElementById('header-menu-btn');
+            const headerMobileMenu = document.getElementById('header-mobile-menu');
 
-        if (headerMenuBtn && headerMobileMenu) {
-            headerMenuBtn.addEventListener('click', (e) => {
-                e.preventDefault();
-                headerMobileMenu.classList.toggle('hidden');
-                const isExpanded = headerMenuBtn.getAttribute('aria-expanded') === 'true';
-                headerMenuBtn.setAttribute('aria-expanded', !isExpanded);
-            });
-        }
+            if (headerMenuBtn && headerMobileMenu) {
+                headerMenuBtn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    headerMobileMenu.classList.toggle('hidden');
+                    const isExpanded = headerMenuBtn.getAttribute('aria-expanded') === 'true';
+                    headerMenuBtn.setAttribute('aria-expanded', !isExpanded);
+                });
+            }
+
+            // Footer Hamburger-Menü
+            const footerMenuBtn = document.getElementById('footer-menu-btn');
+            const footerMobileMenu = document.getElementById('footer-mobile-menu');
+
+            if (footerMenuBtn && footerMobileMenu) {
+                footerMenuBtn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    footerMobileMenu.classList.toggle('hidden');
+                    const isExpanded = footerMenuBtn.getAttribute('aria-expanded') === 'true';
+                    footerMenuBtn.setAttribute('aria-expanded', !isExpanded);
+                });
+            }
+        });
 
     // Portfolio Filter
     const filterButtons = document.querySelectorAll('.filter-button');
