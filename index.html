@@ -15,7 +15,15 @@
         h2 { font-size: 1.875rem; font-weight: 700; color: #2d3748; }
         p { color: #4a5568; }
         a { text-decoration: none; }
-        /* Weitere kritische Styles hier einfügen */
+        footer a:hover svg,
+        header a:hover svg {
+            fill: #e53e3e; /* Rot bei Hover */
+        }
+        footer a:focus svg,
+        header a:focus svg {
+            outline: 2px solid #e53e3e; /* Fokushighlight */
+            outline-offset: 4px;
+        }
     </style>
 
     <!-- Tailwind CSS kompiliert und minimiert -->
@@ -55,7 +63,7 @@
                 <a href="#contact" class="text-gray-800 font-semibold hover:text-red-500 focus:outline-none focus:ring-2 focus:ring-red-500">Kontakt</a>
             </nav>
             <div class="md:hidden">
-                <button id="menu-btn" class="text-gray-800 text-2xl focus:outline-none" aria-label="Menü" aria-expanded="false" aria-controls="mobile-menu">
+                <button id="header-menu-btn" class="text-gray-800 text-2xl focus:outline-none" aria-label="Menü" aria-expanded="false" aria-controls="header-mobile-menu">
                     <!-- Inline SVG für Hamburger-Icon -->
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 512" class="w-6 h-6 fill-current">
                         <!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free -->
@@ -64,8 +72,8 @@
                 </button>
             </div>
         </div>
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white shadow" role="navigation" aria-label="Mobile Hauptnavigation">
+        <!-- Mobile Menu im Header -->
+        <div id="header-mobile-menu" class="hidden md:hidden bg-white shadow" role="navigation" aria-label="Mobile Hauptnavigation">
             <nav class="px-4 pt-4 pb-2 space-y-2">
                 <a href="#hero" class="block text-gray-800 font-semibold hover:text-red-500 focus:outline-none focus:ring-2 focus:ring-red-500">Home</a>
                 <a href="#about" class="block text-gray-800 font-semibold hover:text-red-500 focus:outline-none focus:ring-2 focus:ring-red-500">Über mich</a>
@@ -75,6 +83,7 @@
             </nav>
         </div>
     </header>
+
     
 
     <!-- Hauptinhalt -->
@@ -394,60 +403,97 @@
         </section>
     </main>
 
-<!-- Footer -->
-<footer class="bg-gray-800 text-white py-8" role="contentinfo">
-    <div class="container mx-auto px-4 text-center">
-        <p>&copy; 2024 ND Photography. Alle Rechte vorbehalten.</p>
-        <ul class="mt-4 flex flex-col md:flex-row justify-center items-center space-y-2 md:space-y-0 md:space-x-6">
-            <!-- Facebook -->
-            <li>
-                <a href="#" class="text-xl hover:text-red-500 focus:outline-none focus:ring-2 focus:ring-red-500" aria-label="Facebook">
-                    <!-- Inline SVG für Facebook -->
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-6 h-6 fill-current">
-                        <!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free -->
-                        <path d="M512 256C512 114.6 397.4 0 256 0S0 114.6 0 256C0 376 82.7 476.8 194.2 504.5V334.2H141.4V256h52.8V222.3c0-87.1 39.4-127.5 125-127.5c16.2 0 44.2 3.2 55.7 6.4V172c-6-.6-16.5-1-29.6-1c-42 0-58.2 15.9-58.2 57.2V256h83.6l-14.4 78.2H287V510.1C413.8 494.8 512 386.9 512 256h0z"/>
-                    </svg>
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8 mt-8" role="contentinfo">
+        <div class="container mx-auto px-4 text-center">
+            <p>&copy; 2024 ND Photography. Alle Rechte vorbehalten.</p>
+            <ul class="mt-4 flex flex-col md:flex-row justify-center items-center space-y-2 md:space-y-0 md:space-x-6">
+                <!-- Facebook -->
+                <li>
+                    <a href="https://www.facebook.com/IhrProfil" class="text-xl hover:text-red-500 focus:outline-none focus:ring-2 focus:ring-red-500" aria-label="Facebook">
+                        <!-- Facebook SVG -->
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-6 h-6 fill-current">
+                            <!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free -->
+                            <path d="M512 256C512 114.6 397.4 0 256 0S0 114.6 0 256C0 376 82.7 476.8 194.2 504.5V334.2H141.4V256h52.8V222.3c0-87.1 39.4-127.5 125-127.5 
+                            c16.2 0 44.2 3.2 55.7 6.4V172c-6-.6-16.5-1-29.6-1c-42 0-58.2 15.9-58.2 57.2V256h83.6l-14.4 78.2H287V510.1C413.8 494.8 512 386.9 512 256h0z"/>
+                        </svg>
+                    </a>
+                </li>
+                <!-- Instagram -->
+                <li>
+                    <a href="https://www.instagram.com/IhrProfil" class="text-xl hover:text-red-500 focus:outline-none focus:ring-2 focus:ring-red-500" aria-label="Instagram">
+                        <!-- Instagram SVG -->
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="w-6 h-6 fill-current">
+                            <!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free -->
+                            <path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9 
+                            S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7 
+                            s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 
+                            14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 
+                            26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2 
+                            -37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 
+                            147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 
+                            0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 
+                            0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 
+                            9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 
+                            9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 
+                            132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 
+                            132.1z"/>
+                        </svg>
+                    </a>
+                </li>
+                <!-- Twitter -->
+                <li>
+                    <a href="https://www.twitter.com/IhrProfil" class="text-xl hover:text-red-500 focus:outline-none focus:ring-2 focus:ring-red-500" aria-label="Twitter">
+                        <!-- Twitter SVG -->
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-6 h-6 fill-current">
+                            <!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free -->
+                            <path d="M459.4 151.7c.3 4.5 .3 9.1 .3 13.6 0 138.7-105.6 298.6-298.6 
+                            298.6-59.5 0-114.7-17.2-161.1-47.1 8.4 1 16.6 1.3 25.3 1.3 
+                            49.1 0 94.2-16.6 130.3-44.8-46.1-1-84.8-31.2-98.1-72.8 
+                            6.5 1 13 1.6 19.8 1.6 9.4 0 18.8-1.3 27.6-3.6-48.1-9.7-84.1-52-84.1-103v-1.3c14 
+                            7.8 30.2 12.7 47.4 13.3-28.3-18.8-46.8-51-46.8-87.4 0-19.5 
+                            5.2-37.4 14.3-53 51.7 63.7 129.3 105.3 216.4 
+                            109.8-1.6-7.8-2.6-15.9-2.6-24 0-57.8 46.8-104.9 
+                            104.9-104.9 30.2 0 57.5 12.7 76.7 33.1 23.7-4.5 46.5-13.3 
+                            66.6-25.3-7.8 24.4-24.4 44.8-46.1 
+                            57.8 21.1-2.3 41.6-8.1 
+                            60.4-16.2-14.3 20.8-32.2 39.3-52.6 
+                            54.3z"/>
+                        </svg>
+                    </a>
+                </li>
+                <!-- Hamburger-Menü im Footer -->
+                <li>
+                    <a href="#" id="footer-menu-btn" class="text-xl hover:text-red-500 focus:outline-none focus:ring-2 focus:ring-red-500" aria-label="Hamburger-Menü" aria-expanded="false" aria-controls="footer-mobile-menu">
+                        <!-- Hamburger-Icon SVG -->
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 512" class="w-6 h-6 fill-current">
+                            <!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free -->
+                            <path d="M64 360a56 56 0 1 0 0 112 56 56 0 1 0 0-112zm0-160a56 56 0 1 0 0 112 56 56 0 1 0 0-112zM120 
+                            96A56 56 0 1 0 8 96a56 56 0 1 0 112 0z"/>
+                        </svg>
+                    </a>
+                </li>
+            </ul>
+            <!-- Mobile Menü im Footer -->
+            <div id="footer-mobile-menu" class="hidden mt-4 flex flex-col space-y-2 md:hidden" role="navigation" aria-label="Footer Mobile Hauptnavigation">
+                <a href="#hero" class="block text-gray-800 font-semibold hover:text-red-500 focus:outline-none focus:ring-2 focus:ring-red-500">Home</a>
+                <a href="#about" class="block text-gray-800 font-semibold hover:text-red-500 focus:outline-none focus:ring-2 focus:ring-red-500">Über mich</a>
+                <a href="#services" class="block text-gray-800 font-semibold hover:text-red-500 focus:outline-none focus:ring-2 focus:ring-red-500">Services</a>
+                <a href="#portfolio" class="block text-gray-800 font-semibold hover:text-red-500 focus:outline-none focus:ring-2 focus:ring-red-500">Portfolio</a>
+                <a href="#contact" class="block text-gray-800 font-semibold hover:text-red-500 focus:outline-none focus:ring-2 focus:ring-red-500">Kontakt</a>
+            </div>
+            <div class="mt-4 flex justify-center space-x-4">
+                <!-- Weitere Footer-Inhalte (z.B. zusätzliche Links oder Informationen) können hier eingefügt werden -->
+                <!-- Beispiel: Zusätzliche Links -->
+                <a href="#" class="hover:text-red-500" aria-label="Datenschutz">
+                    Datenschutz
                 </a>
-            </li>
-            <!-- Instagram -->
-            <li>
-                <a href="#" class="text-xl hover:text-red-500 focus:outline-none focus:ring-2 focus:ring-red-500" aria-label="Instagram">
-                    <!-- Inline SVG für Instagram -->
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="w-6 h-6 fill-current">
-                        <!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free -->
-                        <path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/>
-                        <path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/>
-                        <circle cx="398.8" cy="388" r="20.8"/>
-                    </svg>
+                <a href="#" class="hover:text-red-500" aria-label="Impressum">
+                    Impressum
                 </a>
-            </li>
-            <!-- Twitter -->
-            <li>
-                <a href="#" class="text-xl hover:text-red-500 focus:outline-none focus:ring-2 focus:ring-red-500" aria-label="Twitter">
-                    <!-- Inline SVG für Twitter -->
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-6 h-6 fill-current">
-                        <!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free -->
-                        <path d="M459.4 4.569c-.885.392-1.83.656-2.825.775 
-                                 1.014-.611 1.794-1.574 2.163-2.723-.951.555-2.005.959-3.127 
-                                 1.184-.897-.957-2.178-1.555-3.594-1.555-2.723 
-                                 0-4.928 2.206-4.928 4.928 0 .386.044.762.127 
-                                 1.124C7.691 8.094 4.066 6.13 1.64 3.161c-.423.722-.666 
-                                 1.561-.666 2.475 0 1.708.87 3.213 2.188 
-                                 4.096-.807-.026-1.566-.248-2.229-.616v.061c0 
-                                 2.385 1.693 4.374 3.946 4.827-.413.111-.849.171-1.296.171-.314 
-                                 0-.615-.03-.916-.086.631 1.953 2.445 3.376 
-                                 4.6 3.416-1.68 1.319-3.809 2.105-6.102 
-                                 2.105-.394 0-.779-.023-1.17-.067 
-                                 2.179 1.397 4.768 2.213 7.557 2.213 
-                                 9.054 0 14-7.496 14-13.986 
-                                 0-.21 0-.42-.015-.63.962-.695 
-                                 1.8-1.562 2.46-2.549z"/>
-                    </svg>
-                </a>
-            </li>
-        </ul>
-    </div>
-</footer>
+            </div>
+        </div>
+    </footer>
 
 
     
