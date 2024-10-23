@@ -1,26 +1,16 @@
 // script.js
 
         // Header Hamburger-Menü
-document.addEventListener('DOMContentLoaded', function () {
-    // Funktion zum Umschalten der Klasse 'hidden'
-    const headerMenuBtn = document.getElementById('header-menu-btn');
-    const headerMobileMenu = document.getElementById('header-mobile-menu');
-
-    if (headerMenuBtn && headerMobileMenu) {
-        headerMenuBtn.addEventListener('click', function () {
-            // Umschalten der Sichtbarkeit des Menüs
-            headerMobileMenu.classList.toggle('hidden');
-            // Ändern der Aria-Eigenschaft
-            const isExpanded = headerMenuBtn.getAttribute('aria-expanded') === 'true';
-            headerMenuBtn.setAttribute('aria-expanded', !isExpanded);
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuBtn = document.getElementById('header-menu-btn');
+            const mobileMenu = document.getElementById('header-mobile-menu');
+        
+            menuBtn.addEventListener('click', function() {
+                const isExpanded = menuBtn.getAttribute('aria-expanded') === 'true' || false;
+                menuBtn.setAttribute('aria-expanded', !isExpanded);
+                mobileMenu.classList.toggle('hidden');
+            });
         });
-    }
-            // Header Hamburger-Menü
-    toggleMenu('header-menu-btn', 'header-mobile-menu');
-
-    // Footer Hamburger-Menü
-    toggleMenu('footer-menu-btn', 'footer-mobile-menu');
-});
 
 
     // Portfolio Filter
