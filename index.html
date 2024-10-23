@@ -24,6 +24,23 @@
             outline: 2px solid #e53e3e; /* Fokushighlight */
             outline-offset: 4px;
         }
+        /* Hamburger Animation */
+        .open .line1 {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+        .open .line2 {
+            opacity: 0;
+        }
+        .open .line3 {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+    
+        /* Übergang für die Linien */
+        .line1, .line2, .line3 {
+        transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+
+        
     </style>
 
     <!-- Tailwind CSS kompiliert und minimiert -->
@@ -64,11 +81,12 @@
                 <a href="#contact" class="text-gray-800 font-semibold hover:text-red-500 focus:outline-none focus:ring-2 focus:ring-red-500">Kontakt</a>
             </nav>
             <div class="md:hidden">
-                <button id="header-menu-btn" class="text-gray-800 text-2xl focus:outline-none" aria-label="Menü" aria-expanded="false" aria-controls="header-mobile-menu">
-                    <!-- Inline SVG für Hamburger-Icon -->
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 512" class="w-6 h-6 fill-current">
-                        <!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free -->
-                        <path d="M64 360a56 56 0 1 0 0 112 56 56 0 1 0 0-112zm0-160a56 56 0 1 0 0 112 56 56 0 1 0 0-112zM120 96A56 56 0 1 0 8 96a56 56 0 1 0 112 0z"/>
+                <button id="header-menu-btn" class="text-gray-800 text-2xl focus:outline-none transition-transform duration-300 ease-in-out" aria-label="Menü" aria-expanded="false" aria-controls="header-mobile-menu">
+                    <!-- Neues Hamburger-Icon SVG -->
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-6 h-6 fill-current">
+                        <path class="line1" d="M4 6h16"/>
+                        <path class="line2" d="M4 12h16"/>
+                        <path class="line3" d="M4 18h16"/>
                     </svg>
                 </button>
             </div>
