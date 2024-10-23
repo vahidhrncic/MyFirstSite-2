@@ -10,6 +10,7 @@
                 if (menuButton && mobileMenu) {
                     menuButton.addEventListener('click', (e) => {
                         e.preventDefault();
+                        console.log(`Toggle menu: ${menuId}`); // Debugging
                         mobileMenu.classList.toggle('hidden');
                         menuButton.classList.toggle('open'); // Klasse 'open' toggeln
                         const isExpanded = menuButton.getAttribute('aria-expanded') === 'true';
@@ -24,7 +25,6 @@
             // Footer Hamburger-Menü
             toggleMenu('footer-menu-btn', 'footer-mobile-menu');
         });
-
 
     // Portfolio Filter
     const filterButtons = document.querySelectorAll('.filter-button');
