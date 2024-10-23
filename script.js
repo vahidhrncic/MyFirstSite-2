@@ -2,13 +2,14 @@
 
         // Header Hamburger-Menü
         document.addEventListener('DOMContentLoaded', function() {
-        const menuBtn = document.getElementById('header-menu-btn');
-        const mobileMenu = document.getElementById('header-mobile-menu');
+                const menuBtn = document.getElementById('header-menu-btn');
+                const mobileMenu = document.getElementById('header-mobile-menu');
         
         menuBtn.addEventListener('click', () => {
-        const expanded = menuBtn.getAttribute('aria-expanded') === 'true' || false;
-        menuBtn.setAttribute('aria-expanded', !expanded);
-        mobileMenu.classList.toggle('hidden');
+                console.log('Menu button clicked');
+                const expanded = menuBtn.getAttribute('aria-expanded') === 'true' || false;
+                menuBtn.setAttribute('aria-expanded', !expanded);
+                mobileMenu.classList.toggle('hidden');
             });
         });
 
