@@ -1,15 +1,17 @@
 // script.js
 
-// Hamburger Menü
-document.addEventListener('DOMContentLoaded', function() {
-    const menuBtn = document.getElementById('menu-btn');
-    const mobileMenu = document.getElementById('mobile-menu');
+        // Header Hamburger-Menü
+        const headerMenuBtn = document.getElementById('header-menu-btn');
+        const headerMobileMenu = document.getElementById('header-mobile-menu');
 
-    menuBtn.addEventListener('click', () => {
-        const expanded = menuBtn.getAttribute('aria-expanded') === 'true' || false;
-        menuBtn.setAttribute('aria-expanded', !expanded);
-        mobileMenu.classList.toggle('hidden');
-    });
+        if (headerMenuBtn && headerMobileMenu) {
+            headerMenuBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                headerMobileMenu.classList.toggle('hidden');
+                const isExpanded = headerMenuBtn.getAttribute('aria-expanded') === 'true';
+                headerMenuBtn.setAttribute('aria-expanded', !isExpanded);
+            });
+        }
 
     // Portfolio Filter
     const filterButtons = document.querySelectorAll('.filter-button');
