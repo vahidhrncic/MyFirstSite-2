@@ -1,30 +1,22 @@
 // script.js
 
         // Header Hamburger-Menü
-        document.addEventListener('DOMContentLoaded', () => {
-            // Funktion zum Umschalten der Klasse 'open'
-            function toggleMenu(buttonId, menuId) {
-                const menuButton = document.getElementById(buttonId);
-                const mobileMenu = document.getElementById(menuId);
-        
-                if (menuButton && mobileMenu) {
-                    menuButton.addEventListener('click', (e) => {
-                        e.preventDefault();
-                        console.log(`Toggle menu: ${menuId}`); // Debugging
-                        mobileMenu.classList.toggle('hidden');
-                        menuButton.classList.toggle('open'); // Klasse 'open' toggeln
-                        const isExpanded = menuButton.getAttribute('aria-expanded') === 'true';
-                        menuButton.setAttribute('aria-expanded', !isExpanded);
-                    });
-                }
-            }
-        
-            // Header Hamburger-Menü
-            toggleMenu('header-menu-btn', 'header-mobile-menu');
-        
-            // Footer Hamburger-Menü
-            toggleMenu('footer-menu-btn', 'footer-mobile-menu');
+document.addEventListener('DOMContentLoaded', function () {
+    // Funktion zum Umschalten der Klasse 'hidden'
+    const headerMenuBtn = document.getElementById('header-menu-btn');
+    const headerMobileMenu = document.getElementById('header-mobile-menu');
+
+    if (headerMenuBtn && headerMobileMenu) {
+        headerMenuBtn.addEventListener('click', function () {
+            // Umschalten der Sichtbarkeit des Menüs
+            headerMobileMenu.classList.toggle('hidden');
+            // Ändern der Aria-Eigenschaft
+            const isExpanded = headerMenuBtn.getAttribute('aria-expanded') === 'true';
+            headerMenuBtn.setAttribute('aria-expanded', !isExpanded);
         });
+    }
+});
+
 
     // Portfolio Filter
     const filterButtons = document.querySelectorAll('.filter-button');
