@@ -2,6 +2,7 @@
 
         // Header Hamburger-Menü
         document.addEventListener('DOMContentLoaded', function() {
+                console.log('Script loaded');
                 const menuBtn = document.getElementById('header-menu-btn');
                 const mobileMenu = document.getElementById('header-mobile-menu');
         
