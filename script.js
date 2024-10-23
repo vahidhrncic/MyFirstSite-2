@@ -15,6 +15,11 @@ document.addEventListener('DOMContentLoaded', function () {
             headerMenuBtn.setAttribute('aria-expanded', !isExpanded);
         });
     }
+            // Header Hamburger-Menü
+    toggleMenu('header-menu-btn', 'header-mobile-menu');
+
+    // Footer Hamburger-Menü
+    toggleMenu('footer-menu-btn', 'footer-mobile-menu');
 });
 
 
