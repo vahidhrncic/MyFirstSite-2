@@ -1,33 +1,30 @@
 // script.js
 
         // Header Hamburger-Menü
-        document.addEventListener('DOMContentLoaded', () => {
+         document.addEventListener('DOMContentLoaded', () => {
+            // Funktion zum Umschalten der Klasse 'open'
+            function toggleMenu(buttonId, menuId) {
+                const menuButton = document.getElementById(buttonId);
+                const mobileMenu = document.getElementById(menuId);
+        
+                if (menuButton && mobileMenu) {
+                    menuButton.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        mobileMenu.classList.toggle('hidden');
+                        menuButton.classList.toggle('open'); // Klasse 'open' toggeln
+                        const isExpanded = menuButton.getAttribute('aria-expanded') === 'true';
+                        menuButton.setAttribute('aria-expanded', !isExpanded);
+                    });
+                }
+            }
+        
             // Header Hamburger-Menü
-            const headerMenuBtn = document.getElementById('header-menu-btn');
-            const headerMobileMenu = document.getElementById('header-mobile-menu');
-
-            if (headerMenuBtn && headerMobileMenu) {
-                headerMenuBtn.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    headerMobileMenu.classList.toggle('hidden');
-                    const isExpanded = headerMenuBtn.getAttribute('aria-expanded') === 'true';
-                    headerMenuBtn.setAttribute('aria-expanded', !isExpanded);
-                });
-            }
-
+            toggleMenu('header-menu-btn', 'header-mobile-menu');
+        
             // Footer Hamburger-Menü
-            const footerMenuBtn = document.getElementById('footer-menu-btn');
-            const footerMobileMenu = document.getElementById('footer-mobile-menu');
-
-            if (footerMenuBtn && footerMobileMenu) {
-                footerMenuBtn.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    footerMobileMenu.classList.toggle('hidden');
-                    const isExpanded = footerMenuBtn.getAttribute('aria-expanded') === 'true';
-                    footerMenuBtn.setAttribute('aria-expanded', !isExpanded);
-                });
-            }
+            toggleMenu('footer-menu-btn', 'footer-mobile-menu');
         });
+
 
     // Portfolio Filter
     const filterButtons = document.querySelectorAll('.filter-button');
