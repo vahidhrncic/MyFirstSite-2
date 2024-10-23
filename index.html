@@ -30,10 +30,21 @@
 
     <!-- Preload des LCP-Bildes für Desktop -->
     <link rel="preload" as="image" href="IMG_01.webp" type="image/webp" crossorigin="anonymous">
-
+    
     <!-- Preload des LCP-Bildes für Mobile -->
     <link rel="preload" as="image" href="IMG_01-small.webp" type="image/webp" media="(max-width: 768px)" crossorigin="anonymous">
     
+    <!-- Content Security Policy -->
+    <meta http-equiv="Content-Security-Policy" content="
+      default-src 'self';
+      script-src 'self' https://cdnjs.cloudflare.com;
+      style-src 'self' https://cdnjs.cloudflare.com;
+      img-src 'self' https://vahidhrncic.github.io data:;
+      font-src 'self' https://cdnjs.cloudflare.com;
+      connect-src 'self';
+      media-src 'self';
+      object-src 'none';
+    ">
 
     <!-- Smooth Scroll Behavior -->
     <style>
@@ -84,15 +95,19 @@
             <div class="container mx-auto px-4">
                 <!-- Bildraster -->
                 <div class="grid grid-cols-2 gap-4 max-w-md mx-auto md:max-w-4xl">
+
                     <!-- LCP Bild -->
-                    <img 
-                        src="IMG_01-small.webp" 
-                        srcset="IMG_01-small.webp 600w, IMG_01.webp 1200w" 
-                        sizes="(max-width: 768px) 100vw, 50vw" 
-                        alt="Bild 1" 
-                        class="w-full h-40 md:h-80 object-cover rounded-lg shadow-lg" 
-                        width="600" 
-                        height="400">
+                    <picture>
+                        <source srcset="IMG_01-small.webp 600w, IMG_01.webp 1200w" type="image/webp">
+                        <img 
+                            src="IMG_01-small.webp" 
+                            srcset="IMG_01-small.webp 600w, IMG_01.webp 1200w" 
+                            sizes="(max-width: 768px) 100vw, 50vw" 
+                            alt="Bild 1" 
+                            class="w-full h-40 md:h-80 object-cover rounded-lg shadow-lg" 
+                            width="600" 
+                            height="400">
+                    </picture>
                     
                     <!-- Weitere Bilder mit Lazy Loading -->
                     <img 
