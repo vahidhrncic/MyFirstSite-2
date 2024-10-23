@@ -1,20 +1,19 @@
-// script.js
+// Header Hamburger-Menü
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('Script loaded');
+    const menuBtn = document.getElementById('header-menu-btn');
+    const mobileMenu = document.getElementById('header-mobile-menu');
+    
+    menuBtn.addEventListener('click', () => {
+        console.log('Menu button clicked');
+        const expanded = menuBtn.getAttribute('aria-expanded') === 'true' || false;
+        menuBtn.setAttribute('aria-expanded', !expanded);
+        mobileMenu.classList.toggle('hidden');
+    });
+});
 
-        // Header Hamburger-Menü
-        document.addEventListener('DOMContentLoaded', function() {
-                console.log('Script loaded');
-                const menuBtn = document.getElementById('header-menu-btn');
-                const mobileMenu = document.getElementById('header-mobile-menu');
-        
-        menuBtn.addEventListener('click', () => {
-                console.log('Menu button clicked');
-                const expanded = menuBtn.getAttribute('aria-expanded') === 'true' || false;
-                menuBtn.setAttribute('aria-expanded', !expanded);
-                mobileMenu.classList.toggle('hidden');
-            });
-        });
-
-    // Portfolio Filter
+// Portfolio Filter
+document.addEventListener('DOMContentLoaded', function() {
     const filterButtons = document.querySelectorAll('.filter-button');
     const portfolioItems = document.querySelectorAll('.portfolio-item');
 
@@ -31,8 +30,10 @@
             });
         });
     });
+});
 
-    // Lazy Loading mit IntersectionObserver
+// Lazy Loading mit IntersectionObserver
+document.addEventListener('DOMContentLoaded', function() {
     const lazyImages = document.querySelectorAll('.lazy');
     if ('IntersectionObserver' in window) {
         const imageObserver = new IntersectionObserver((entries, observer) => {
