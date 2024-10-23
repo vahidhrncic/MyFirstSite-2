@@ -2,16 +2,15 @@
 
         // Header Hamburger-Menü
         document.addEventListener('DOMContentLoaded', function() {
-            const menuBtn = document.getElementById('header-menu-btn');
-            const mobileMenu = document.getElementById('header-mobile-menu');
+        const menuBtn = document.getElementById('header-menu-btn');
+        const mobileMenu = document.getElementById('header-mobile-menu');
         
-            menuBtn.addEventListener('click', function() {
-                const isExpanded = menuBtn.getAttribute('aria-expanded') === 'true' || false;
-                menuBtn.setAttribute('aria-expanded', !isExpanded);
-                mobileMenu.classList.toggle('hidden');
+        menuBtn.addEventListener('click', () => {
+        const expanded = menuBtn.getAttribute('aria-expanded') === 'true' || false;
+        menuBtn.setAttribute('aria-expanded', !expanded);
+        mobileMenu.classList.toggle('hidden');
             });
         });
-
 
     // Portfolio Filter
     const filterButtons = document.querySelectorAll('.filter-button');
