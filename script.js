@@ -1,7 +1,7 @@
 // script.js
 
         // Header Hamburger-Menü
-         document.addEventListener('DOMContentLoaded', () => {
+        document.addEventListener('DOMContentLoaded', () => {
             // Funktion zum Umschalten der Klasse 'open'
             function toggleMenu(buttonId, menuId) {
                 const menuButton = document.getElementById(buttonId);
